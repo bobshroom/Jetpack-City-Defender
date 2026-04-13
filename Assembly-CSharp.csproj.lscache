@@ -59,7 +59,6 @@ Assets/
  Gun.cs
  Player.cs
  SceneLoader.cs
- showfps.cs
 Temp/obj/Assembly-CSharp/.NETStandard,Version=v2.1.AssemblyAttributes.cs
 
 [metadataReferences]

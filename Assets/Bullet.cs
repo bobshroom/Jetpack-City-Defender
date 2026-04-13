@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         transform.Translate(0.2f, 0, 0);
+        //transform.position += transform.right * 0.2f; // この書き方でも可。散弾等が作れる。
 
         if (transform.position.x > 15)
         {

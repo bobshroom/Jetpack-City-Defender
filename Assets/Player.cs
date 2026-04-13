@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // プレイヤーの移動
+        // if文は、「もし～ならば」という意味
         if (Keyboard.current.upArrowKey.isPressed && transform.position.y < 4.5f)
         {
             transform.Translate(0, 0.02f, 0);

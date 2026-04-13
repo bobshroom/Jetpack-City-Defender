@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
         transform.Translate(-0.01f, 0, 0);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)     // 弾が当たった時
     {
         if (other.gameObject.tag == "bullet")
         {
