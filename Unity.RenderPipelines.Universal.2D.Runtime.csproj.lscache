@@ -2,12 +2,10 @@ version=1
 
 # This file caches language service data to improve the performance of C# Dev Kit.
 # It is not intended for manual editing. It can safely be deleted and will be
-# regenerated automatically.
+# regenerated automatically. For more information, see https://aka.ms/lscache
 #
-# To exclude from version control, add *.lscache to your .gitignore file.
-#
-# To disable caching, add the following to your VS Code settings:
-#   "dotnet.projectsystem.enableLanguageServiceCache": false
+# To control where cache files are stored, use the following VS Code setting:
+#   "dotnet.projectsystem.cacheInProjectFolder": true
 
 [project]
 language=C#
@@ -410,13 +408,26 @@ Library/PackageCache/
   Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll
 Temp/bin/Debug/
  Unity.2D.Animation.Runtime.dll
+ Unity.2D.Common.Runtime.dll
  Unity.2D.SpriteShape.Runtime.dll
  Unity.Burst.dll
+ Unity.Collections.dll
+ Unity.InputSystem.dll
+ Unity.InternalAPIEngineBridge.001.dll
+ Unity.InternalAPIEngineBridge.RenderPipelines.Core.Runtime.Shared.dll
  Unity.Mathematics.dll
+ Unity.PathTracing.Runtime.dll
  Unity.RenderPipeline.Universal.ShaderLibrary.dll
  Unity.RenderPipelines.Core.Runtime.dll
+ Unity.RenderPipelines.Core.Runtime.Shared.dll
+ Unity.RenderPipelines.GPUDriven.Runtime.dll
+ Unity.RenderPipelines.Universal.Config.Runtime.dll
  Unity.RenderPipelines.Universal.Runtime.dll
+ Unity.SurfaceCache.Runtime.dll
+ Unity.UnifiedRayTracing.Runtime.dll
+ UnityEditor.TestRunner.dll
  UnityEditor.UI.dll
+ UnityEngine.TestRunner.dll
  UnityEngine.UI.dll
 
 [analyzerReferences]
@@ -424,7 +435,7 @@ Temp/bin/Debug/
  Unity.Properties.SourceGenerator.dll
  Unity.SourceGenerators.dll
  Unity.UIToolkit.SourceGenerator.dll
-../../../Users/vyuaz/.vscode/extensions/visualstudiotoolsforunity.vstuc-1.2.1/Analyzers/Microsoft.Unity.Analyzers.dll
+../../../Users/vyuaz/.vscode/extensions/visualstudiotoolsforunity.vstuc-1.2.2/Analyzers/Microsoft.Unity.Analyzers.dll
 
 [analyzerConfigFiles]
 Temp/obj/Unity.RenderPipelines.Universal.2D.Runtime/Unity.RenderPipelines.Universal.2D.Runtime.GeneratedMSBuildEditorConfig.editorconfig

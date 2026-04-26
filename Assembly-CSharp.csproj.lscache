@@ -2,12 +2,10 @@ version=1
 
 # This file caches language service data to improve the performance of C# Dev Kit.
 # It is not intended for manual editing. It can safely be deleted and will be
-# regenerated automatically.
+# regenerated automatically. For more information, see https://aka.ms/lscache
 #
-# To exclude from version control, add *.lscache to your .gitignore file.
-#
-# To disable caching, add the following to your VS Code settings:
-#   "dotnet.projectsystem.enableLanguageServiceCache": false
+# To control where cache files are stored, use the following VS Code setting:
+#   "dotnet.projectsystem.cacheInProjectFolder": true
 
 [project]
 language=C#
@@ -52,12 +50,16 @@ TemporaryDependencyNodeTargetIdentifier=netstandard2.1
 /warnaserror+:NU1605
 
 [sourceFiles]
-Assets/
- Bullet.cs
- Enemy.cs
- EnemyGenerator.cs
- Gun.cs
- Player.cs
+Assets/Script/
+ BackGroundMover.cs
+ Enemy/
+  Enemy.cs
+  EnemyGenerator.cs
+ Explosion.cs
+ Player/
+  Bullet.cs
+  Gun.cs
+  Player.cs
  SceneLoader.cs
  showfps.cs
 Temp/obj/Assembly-CSharp/.NETStandard,Version=v2.1.AssemblyAttributes.cs
@@ -353,6 +355,7 @@ Temp/bin/Debug/
  Unity.2D.Tilemap.Extras.dll
  Unity.2D.Tilemap.Extras.Editor.dll
  Unity.2D.Tooling.Editor.dll
+ Unity.2D.Triangulation.Runtime.dll
  Unity.Burst.dll
  Unity.Burst.Editor.dll
  Unity.Collections.dll
@@ -389,6 +392,7 @@ Temp/bin/Debug/
  Unity.Rider.Editor.dll
  Unity.Searcher.Editor.dll
  Unity.ShaderGraph.Editor.dll
+ Unity.ShaderGraph.Utilities.dll
  Unity.SurfaceCache.Runtime.dll
  Unity.TextMeshPro.dll
  Unity.TextMeshPro.Editor.dll
@@ -404,8 +408,10 @@ Temp/bin/Debug/
  Unity.VisualScripting.State.dll
  Unity.VisualScripting.State.Editor.dll
  Unity.VisualStudio.Editor.dll
+ UnityEditor.TestRunner.dll
  UnityEditor.UI.Analytics.dll
  UnityEditor.UI.dll
+ UnityEngine.TestRunner.dll
  UnityEngine.UI.dll
 
 [analyzerReferences]
@@ -413,7 +419,7 @@ Temp/bin/Debug/
  Unity.Properties.SourceGenerator.dll
  Unity.SourceGenerators.dll
  Unity.UIToolkit.SourceGenerator.dll
-../../../Users/vyuaz/.vscode/extensions/visualstudiotoolsforunity.vstuc-1.2.1/Analyzers/Microsoft.Unity.Analyzers.dll
+../../../Users/vyuaz/.vscode/extensions/visualstudiotoolsforunity.vstuc-1.2.2/Analyzers/Microsoft.Unity.Analyzers.dll
 
 [analyzerConfigFiles]
 Temp/obj/Assembly-CSharp/Assembly-CSharp.GeneratedMSBuildEditorConfig.editorconfig

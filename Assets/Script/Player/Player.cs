@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private float speed = 6;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,19 +16,19 @@ public class Player : MonoBehaviour
     {
         if (Keyboard.current.upArrowKey.isPressed && transform.position.y < 4.5f)
         {
-            transform.Translate(0, 0.02f, 0);
+            transform.Translate(0, speed * Time.deltaTime, 0);
         }
         if (Keyboard.current.downArrowKey.isPressed && transform.position.y > -4.5f)
         {
-            transform.Translate(0, -0.02f, 0);
+            transform.Translate(0, -speed * Time.deltaTime, 0);
         }
         if (Keyboard.current.rightArrowKey.isPressed && transform.position.x < 10f)
         {
-            transform.Translate(0.02f, 0, 0);
+            transform.Translate(speed * Time.deltaTime, 0, 0);
         }
         if (Keyboard.current.leftArrowKey.isPressed && transform.position.x > -10f)
         {
-            transform.Translate(-0.02f, 0, 0);
+            transform.Translate(-speed * Time.deltaTime, 0, 0);
         }
     }
 }
