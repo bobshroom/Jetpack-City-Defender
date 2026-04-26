@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     float speed = 0.02f;
+    public GameObject bulletPrefab; // 弾のプレハブを格納する変数
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,5 +22,19 @@ public class Player : MonoBehaviour
         {
             transform.Translate(0, speed, 0);
         }
+
+
+        // スペースキーが押された際にshot()関数を呼び出す
+        if (Keyboard.current.spaceKey.isPressed)
+        {
+            shot();
+        }
+    }
+
+
+    void shot()
+    {
+        // ここにスペースキーが押された際の挙動を記述していく
+        
     }
 }
