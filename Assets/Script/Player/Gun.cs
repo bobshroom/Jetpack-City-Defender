@@ -6,7 +6,7 @@ public class Gun : MonoBehaviour
     public GameObject bulletPrefab;
     private float time;
     [SerializeField] private float speed = 10;
-    [SerializeField] private float delay = 0.1f;
+    [SerializeField] private float delay = 0.25f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

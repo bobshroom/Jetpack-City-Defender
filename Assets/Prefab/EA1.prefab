@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2059478913011210033}
   - component: {fileID: 8057334464774776454}
   - component: {fileID: 6204602076938292279}
+  - component: {fileID: 7124928106603780903}
   - component: {fileID: 4955335967289019818}
   - component: {fileID: 1712497676130598848}
   - component: {fileID: -954690421181470637}
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 8844967644828607079}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.6043854, y: -0.81208247, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -108,6 +109,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   explosionPrefab: {fileID: 7441743695918990268, guid: 84503eedc2644824488f91fad613ad10, type: 3}
+  explosionSize: 2
+  hp: 300
+  isExplosion: 1
+  isInWindow: 0
+--- !u!114 &7124928106603780903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8844967644828607079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7593486247aa1747ac82b7c6839fe19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyNormal
+  speed: 2
 --- !u!61 &4955335967289019818
 BoxCollider2D:
   m_ObjectHideFlags: 0

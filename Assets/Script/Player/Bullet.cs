@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public int damage = 100; // 弾のダメージ
+    public float speed = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -11,7 +13,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0.2f, 0, 0);
+        transform.Translate(speed * Time.deltaTime, 0, 0);
 
         if (transform.position.x > 15)
         {
