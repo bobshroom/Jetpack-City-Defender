@@ -1,13 +1,19 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
     public int damage = 100; // 弾のダメージ
     public float speed = 0;
+    public float angle; // 弾の角度
+    public float size = 2f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        transform.rotation = Quaternion.Euler(0, 0, angle);
+        transform.localScale = new Vector3(size, size, 1);
+
+        Destroy(gameObject, 5f);
     }
 
     // Update is called once per frame

@@ -21,7 +21,8 @@ public class Gun : MonoBehaviour
         {
             time = 0;
             GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-            bullet.transform.Translate(speed * Time.deltaTime, 0, 0);
+            bullet.GetComponent<Bullet>().speed = speed;
+            bullet.GetComponent<Bullet>().angle = transform.rotation.eulerAngles.z; 
         }
     }
 }

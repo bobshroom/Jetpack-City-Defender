@@ -26,7 +26,7 @@ public class EnemyBomber : MonoBehaviour
             return;
         }
         transform.Translate(-speed * Time.deltaTime, 0, 0);
-        if (UnityEngine.Random.Range(0, 1000) < 2) dropBomb(); // ランダムで爆弾を落とす
+        if (UnityEngine.Random.Range(0, 1000) < 2 || transform.position.x < -4) dropBomb(); // ランダムで爆弾を落とす
     }
 
     void dropBomb()
