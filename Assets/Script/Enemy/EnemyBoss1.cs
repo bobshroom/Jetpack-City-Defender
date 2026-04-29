@@ -27,6 +27,7 @@ public class EnemyBoss1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.gameState == 1) return;
         if (!isInWindow)
         {
             transform.position += Vector3.left * Time.deltaTime * 2;
@@ -85,11 +86,11 @@ public class EnemyBoss1 : MonoBehaviour
     IEnumerator moveCoroutine()
     {
         float goalY = transform.position.y;
-        transform.position += Vector3.up * 2;
+        transform.position += Vector3.up * 4;
 
         do
         {
-            float angle = goalY - transform.position.y * -30;
+            float angle = (goalY - transform.position.y) * -30;
             transform.rotation = Quaternion.Euler(0, 0, angle);
             transform.position += -transform.right * Time.deltaTime * 8;
             yield return null;

@@ -13,6 +13,7 @@ public class EnemyNormal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.gameState == 1) return;
         transform.Translate(-speed * Time.deltaTime, 0, 0);
     }
 }

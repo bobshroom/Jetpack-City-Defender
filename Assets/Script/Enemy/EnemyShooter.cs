@@ -20,6 +20,7 @@ public class EnemyShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.gameState == 1) return;
         if (!isInWindow)
         {
             transform.position += Vector3.left * Time.deltaTime * 2;

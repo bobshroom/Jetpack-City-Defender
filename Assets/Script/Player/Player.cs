@@ -22,6 +22,10 @@ public class Player : MonoBehaviour
     private bool isInvincible = false;
     private float invincibleTime = 0;
     public float currentHp;
+
+    
+    [SerializeField] GameObject explosionPrefab; // 爆発エフェクトのプレハブ
+    [SerializeField] private float explosionSize = 1.75f; // 爆発エフェクトのサイズ
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -88,10 +92,26 @@ public class Player : MonoBehaviour
             StartCoroutine(invisible());
             setHpBar(hp / maxHp, bullet.damage);
         }
+        if (collision.tag == "enemy")
+        {
+            EnemyManager em = collision.GetComponent<EnemyManager>();
+            int damage = em.contactDamage;
+            if (damage > 0)
+            {
+                hp -= damage;
+                invincibleTime = 2f;
+                StartCoroutine(invisible());
+                setHpBar(hp / maxHp, damage);
+            }
+        }
     }
 
     void setHpBar(float ratio, float damage)
     {
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
         hpBarImage.fillAmount = ratio;
         StartCoroutine(damageBarShake(damage));
         if (ratio > 0.8f) hpBarImage.color = new Color(0, 1, 0);
@@ -131,5 +151,15 @@ public class Player : MonoBehaviour
         hpBar.transform.position = hpBarPos + new Vector3(UnityEngine.Random.Range(-shake, shake), UnityEngine.Random.Range(-shake, shake), 0);
         yield return new WaitForSeconds(0.05f);
         hpBar.transform.position = hpBarPos;
+    }
+
+    void OnDestroy()
+    {
+        GameManager.Instance.gameState = 1;
+        GameObject instant = Instantiate(explosionPrefab); // 爆発エフェクトを生成
+        instant.transform.position = transform.position; // 爆発エフェクトの位置を敵の位置に設定
+        instant.transform.eulerAngles = new Vector3(0, 0, UnityEngine.Random.Range(0,360)); // 爆発エフェクトの回転をランダムに設定
+        instant.transform.localScale = new Vector3(explosionSize, explosionSize, explosionSize);
+        Destroy(instant, 0.5f); // 0.5秒後に爆発エフェクトを破壊
     }
 }

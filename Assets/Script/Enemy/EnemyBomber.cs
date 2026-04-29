@@ -20,6 +20,7 @@ public class EnemyBomber : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.gameState == 1) return;
         if (!isInWindow)
         {
             transform.Translate(-2 * Time.deltaTime, 0, 0);

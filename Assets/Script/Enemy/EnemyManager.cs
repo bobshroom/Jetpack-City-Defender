@@ -7,6 +7,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] GameObject explosionPrefab; // 爆発エフェクトのプレハブ
     [SerializeField] private float explosionSize = 1.75f; // 爆発エフェクトのサイズ
     [SerializeField] int hp = 100; // 敵の体力
+    public int contactDamage;
     private SpriteRenderer spriteRenderer;
     public bool isExplosion = true; // 爆発エフェクトが生成されるかどうか
     public bool isInWindow = false;

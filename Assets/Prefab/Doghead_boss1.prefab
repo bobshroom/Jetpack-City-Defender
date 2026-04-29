@@ -209,6 +209,7 @@ MonoBehaviour:
   explosionPrefab: {fileID: 7441743695918990268, guid: 84503eedc2644824488f91fad613ad10, type: 3}
   explosionSize: 6
   hp: 3000
+  contactDamage: 30
   isExplosion: 1
   isInWindow: 0
 --- !u!114 &4977149296233121184

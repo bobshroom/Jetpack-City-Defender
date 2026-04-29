@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -4048480266152401562}
   m_Layer: 0
   m_Name: EA2
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,6 +133,7 @@ MonoBehaviour:
   explosionPrefab: {fileID: 7441743695918990268, guid: 84503eedc2644824488f91fad613ad10, type: 3}
   explosionSize: 2
   hp: 500
+  contactDamage: 10
   isExplosion: 1
   isInWindow: 0
 --- !u!114 &-8381476402520412423
