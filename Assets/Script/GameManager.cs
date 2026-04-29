@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     public void Update()
     {
         if (gameState == 1) gameOverPanel.SetActive(true);
-        if (gameState == 1 && Keyboard.current.rKey.wasPressedThisFrame) SceneManager.LoadScene("SampleScene");
+        if ((gameState == 1 || gameState == 2) && Keyboard.current.rKey.wasPressedThisFrame) SceneManager.LoadScene("SampleScene");
         if (gameState == 2) gameClearPanel.SetActive(true);
     }
 }

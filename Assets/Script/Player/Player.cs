@@ -1,5 +1,4 @@
 using System.Collections;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -46,21 +45,21 @@ public class Player : MonoBehaviour
         time += Time.deltaTime;
         invincibleTime -= Time.deltaTime;
         
-        if (Keyboard.current.upArrowKey.isPressed && transform.position.y < 4.3f)
+        if ((Keyboard.current.upArrowKey.isPressed || Keyboard.current.wKey.isPressed) && transform.position.y < 4.3f)
         {
             transform.position += new Vector3(0, speed * Time.deltaTime, 0);
         }
-        if (Keyboard.current.downArrowKey.isPressed && transform.position.y > -4.3f)
+        if ((Keyboard.current.downArrowKey.isPressed || Keyboard.current.sKey.isPressed) && transform.position.y > -4.3f)
         {
             transform.position += new Vector3(0, -speed * Time.deltaTime, 0);
         }
-        if (Keyboard.current.rightArrowKey.isPressed && transform.position.x < 8f)
+        if ((Keyboard.current.rightArrowKey.isPressed || Keyboard.current.dKey.isPressed) && transform.position.x < 8f)
         {
             isMoveToHori = true;
             transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
             transform.rotation = Quaternion.Euler(0, 0, Mathf.Max(angle - Time.deltaTime * 50f, -10f));
         }
-        if (Keyboard.current.leftArrowKey.isPressed && transform.position.x > -8f)
+        if ((Keyboard.current.leftArrowKey.isPressed || Keyboard.current.aKey.isPressed) && transform.position.x > -8f)
         {
             isMoveToHori = true;
             transform.position += new Vector3(-speed * Time.deltaTime, 0, 0);

@@ -9,6 +9,7 @@ TagManager:
   - enemyBullet
   - refLaser
   - enemy
+  - endgame
   layers:
   - Default
   - TransparentFX

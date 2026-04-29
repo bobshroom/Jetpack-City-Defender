@@ -80,6 +80,7 @@ public class EnemyBoss1 : MonoBehaviour
 
     void OnDestroy()
     {
+        GameManager.Instance.gameState = 2;
         screenShake(0.0f);
     }
 

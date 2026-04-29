@@ -17,7 +17,7 @@ public class Gun : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (Keyboard.current.spaceKey.isPressed && time > delay)
+        if ((Keyboard.current.spaceKey.isPressed || Mouse.current.leftButton.isPressed) && time > delay)
         {
             time = 0;
             GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
