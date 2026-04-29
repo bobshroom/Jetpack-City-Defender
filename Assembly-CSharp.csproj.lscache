@@ -357,7 +357,6 @@ Temp/bin/Debug/
  Unity.2D.Tilemap.Extras.dll
  Unity.2D.Tilemap.Extras.Editor.dll
  Unity.2D.Tooling.Editor.dll
- Unity.2D.Triangulation.Runtime.dll
  Unity.Burst.dll
  Unity.Burst.Editor.dll
  Unity.Collections.dll
@@ -394,7 +393,6 @@ Temp/bin/Debug/
  Unity.Rider.Editor.dll
  Unity.Searcher.Editor.dll
  Unity.ShaderGraph.Editor.dll
- Unity.ShaderGraph.Utilities.dll
  Unity.SurfaceCache.Runtime.dll
  Unity.TextMeshPro.dll
  Unity.TextMeshPro.Editor.dll
@@ -410,10 +408,8 @@ Temp/bin/Debug/
  Unity.VisualScripting.State.dll
  Unity.VisualScripting.State.Editor.dll
  Unity.VisualStudio.Editor.dll
- UnityEditor.TestRunner.dll
  UnityEditor.UI.Analytics.dll
  UnityEditor.UI.dll
- UnityEngine.TestRunner.dll
  UnityEngine.UI.dll
 
 [analyzerReferences]

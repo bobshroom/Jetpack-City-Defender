@@ -208,7 +208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyManager
   explosionPrefab: {fileID: 7441743695918990268, guid: 84503eedc2644824488f91fad613ad10, type: 3}
   explosionSize: 6
-  hp: 2000
+  hp: 3000
   isExplosion: 1
   isInWindow: 0
 --- !u!114 &4977149296233121184
@@ -225,8 +225,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   bulletPrefab: {fileID: 7379698425448597060, guid: 6f55a11c94d68504480e7f550997e4d9, type: 3}
   speed: 4
-  delay: 0.1
+  delay: 0.02
   bulletSize: 3
+  bulletRotate: 101
   laser: {fileID: 217642599848490930}
   chargeEffect: {fileID: 5955301178441931508}
   chargeLaserEffect: {fileID: 7733280929772853488}

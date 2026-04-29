@@ -10,6 +10,7 @@ public class EnemyBoss1 : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float delay;
     [SerializeField] private float bulletSize;
+    [SerializeField] private float bulletRotate;
     [SerializeField] private GameObject laser;
     [SerializeField] private GameObject chargeEffect;
     [SerializeField] private GameObject chargeLaserEffect;
@@ -36,17 +37,17 @@ public class EnemyBoss1 : MonoBehaviour
         isMoveTrigger = true;
     }
 
-    void shot(int way, float rotate)
+    void shot(int way, float rotate, float kakudo)
     {
         for (int i = 0; i < way; i++)
         {
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             Bullet bulletCompo = bullet.GetComponent<Bullet>();
-            bullet.transform.position += transform.right * -1f;
+            bullet.transform.position += new Vector3(Mathf.Cos(kakudo * Mathf.Deg2Rad), Mathf.Sin(kakudo * Mathf.Deg2Rad), 0) * -1f;
             bulletCompo.speed = speed;
             bulletCompo.size = bulletSize;
-            float angle = 180f + transform.rotation.eulerAngles.z - rotate / 2 + rotate / (way-1) * i;
-            if (way == 1) angle = 180f + transform.rotation.eulerAngles.z;
+            float angle = 180f + kakudo - rotate / 2 + rotate / (way-1) * i;
+            if (way == 1) angle = 180f + kakudo;
             bulletCompo.angle = angle;
         }
     }
@@ -109,32 +110,31 @@ public class EnemyBoss1 : MonoBehaviour
         float rotateSpeed = 0;
         while (time < 0.4f)
         {
-            rotateSpeed -= 0.02f * rotateVelocity;
+            rotateSpeed -= Time.deltaTime * rotateVelocity;
             transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + rotateSpeed);
 
-            time += 0.02f;
-            yield return new WaitForSeconds(0.02f);
+            time += Time.deltaTime;
+            yield return null;
         }
         time = 0;
         while (time < 1f)
         {
-            rotateSpeed += 0.02f * rotateVelocity * 4;
+            rotateSpeed += Time.deltaTime * rotateVelocity * 4;
             transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + rotateSpeed);
 
-            time += 0.02f;
-            yield return new WaitForSeconds(0.02f);
+            time += Time.deltaTime;
+            yield return null;
         }
         time = 0;
-        //Coroutine coroutine = StartCoroutine(machineGun());
+        Coroutine coroutine = StartCoroutine(machineGun(delay));
         while (time < 2f)
         {
             transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + rotateSpeed);
 
-            time += 0.02f;
-            shot(1, 0);
-            yield return new WaitForSeconds(0.02f);
+            time += Time.deltaTime;
+            yield return null;
         }
-        //StopCoroutine(coroutine);
+        StopCoroutine(coroutine);
         while (rotateSpeed > 2)
         {
             rotateSpeed -= 0.02f * rotateVelocity * 2;
@@ -196,12 +196,24 @@ public class EnemyBoss1 : MonoBehaviour
         }
     }
 
+    IEnumerator machineGun(float delay)
+    {
+        float currentBulletRotate = 0;
+        while (true){
+            shot(1, 0, currentBulletRotate);
+            currentBulletRotate += bulletRotate * UnityEngine.Random.Range(0.9f, 1.1f);
+            yield return new WaitForSeconds(delay);
+        }
+    }
+
     
     IEnumerator Laser()
     {
         laser.SetActive(true);
         chargeEffect.SetActive(false);
         chargeLaserEffect.SetActive(false);
+
+        Vector3 currentPos = transform.position;
 
         float scaleGoal = laser.transform.localScale.y;
         float scale = 0;
@@ -215,8 +227,8 @@ public class EnemyBoss1 : MonoBehaviour
         float time = 0;
         while (time < 2f)
         {
-            transform.position += transform.right * Time.deltaTime * 1f;
-            transform.Translate(UnityEngine.Random.Range(-0.05f, 0.05f), UnityEngine.Random.Range(-0.05f, 0.05f), 0);
+            currentPos += transform.right * Time.deltaTime * 1f;
+            transform.position = new Vector3(UnityEngine.Random.Range(-0.05f, 0.05f) + currentPos.x, UnityEngine.Random.Range(-0.05f, 0.05f) + currentPos.y, 0);
             laser.transform.localScale = new Vector3(laser.transform.localScale.x, scaleGoal + Mathf.Sin(time * 100) * 0.1f, laser.transform.localScale.z);
             screenShake(0.1f);
             time += Time.deltaTime;

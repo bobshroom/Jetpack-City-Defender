@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 8421457277106958390}
   - component: {fileID: 4265178039702458700}
   - component: {fileID: 2463566680669740823}
+  - component: {fileID: 3060037876213422343}
   m_Layer: 6
   m_Name: Lazer2
-  m_TagString: enemyBullet
+  m_TagString: refLaser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,3 +139,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.4, y: 0.12}
   m_EdgeRadius: 0
+--- !u!114 &3060037876213422343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981221849003201164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e58b586540e509e4ca99462040875b97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bullet
+  type: 1
+  damage: 30
+  speed: 0
+  angle: 0
+  size: 2
